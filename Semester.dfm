@@ -1,9 +1,9 @@
-object FormUser: TFormUser
-  Left = 129
-  Top = 126
-  Width = 775
+object FormSemester: TFormSemester
+  Left = 192
+  Top = 152
+  Width = 1044
   Height = 540
-  Caption = 'FORM USER'
+  Caption = 'FORM SEMESTER'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,12 +14,12 @@ object FormUser: TFormUser
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object lblnis: TLabel
+  object lblsiswaid: TLabel
     Left = 24
     Top = 16
-    Width = 92
+    Width = 73
     Height = 19
-    Caption = 'USERNAME :'
+    Caption = 'SISWA ID :'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -27,12 +27,12 @@ object FormUser: TFormUser
     Font.Style = []
     ParentFont = False
   end
-  object lblnisn: TLabel
+  object lblpoinid: TLabel
     Left = 24
     Top = 48
-    Width = 92
+    Width = 65
     Height = 19
-    Caption = 'PASSWORD :'
+    Caption = 'POIN ID :'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -40,12 +40,12 @@ object FormUser: TFormUser
     Font.Style = []
     ParentFont = False
   end
-  object lblnama: TLabel
+  object lblwaliid: TLabel
     Left = 24
     Top = 80
-    Width = 47
+    Width = 65
     Height = 19
-    Caption = 'LEVEL'
+    Caption = 'WALI ID :'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -53,12 +53,12 @@ object FormUser: TFormUser
     Font.Style = []
     ParentFont = False
   end
-  object lblnik: TLabel
+  object lblortuid: TLabel
     Left = 24
     Top = 112
-    Width = 55
+    Width = 68
     Height = 19
-    Caption = 'STATUS'
+    Caption = 'ORTU ID :'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -66,12 +66,12 @@ object FormUser: TFormUser
     Font.Style = []
     ParentFont = False
   end
-  object lbltanggallahir: TLabel
+  object lblalamat: TLabel
     Left = 336
     Top = 16
-    Width = 96
+    Width = 79
     Height = 19
-    Caption = 'CREATED AT :'
+    Caption = 'TANGGAL :'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -79,12 +79,12 @@ object FormUser: TFormUser
     Font.Style = []
     ParentFont = False
   end
-  object lbljk: TLabel
+  object lblsemester: TLabel
     Left = 336
     Top = 48
-    Width = 4
+    Width = 85
     Height = 19
-    Caption = ' '
+    Caption = 'SEMESTER :'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -92,12 +92,12 @@ object FormUser: TFormUser
     Font.Style = []
     ParentFont = False
   end
-  object lbl1: TLabel
+  object lblstatus: TLabel
     Left = 336
-    Top = 48
-    Width = 138
+    Top = 80
+    Width = 62
     Height = 19
-    Caption = 'CREATED USER ID :'
+    Caption = 'STATUS :'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -105,23 +105,23 @@ object FormUser: TFormUser
     Font.Style = []
     ParentFont = False
   end
-  object Edtusername: TEdit
-    Left = 160
-    Top = 16
-    Width = 153
+  object Edtsemester: TEdit
+    Left = 472
+    Top = 48
+    Width = 177
     Height = 21
     TabOrder = 0
   end
-  object Edtpassword: TEdit
-    Left = 160
-    Top = 48
-    Width = 153
+  object Edtstatus: TEdit
+    Left = 472
+    Top = 80
+    Width = 177
     Height = 21
     TabOrder = 1
   end
   object bbaru: TButton
     Left = 24
-    Top = 160
+    Top = 152
     Width = 105
     Height = 41
     Caption = 'BARU'
@@ -129,8 +129,8 @@ object FormUser: TFormUser
     OnClick = bbaruClick
   end
   object bsimpan: TButton
-    Left = 152
-    Top = 160
+    Left = 144
+    Top = 152
     Width = 105
     Height = 41
     Caption = 'SIMPAN'
@@ -138,8 +138,8 @@ object FormUser: TFormUser
     OnClick = bsimpanClick
   end
   object bedit: TButton
-    Left = 280
-    Top = 160
+    Left = 264
+    Top = 152
     Width = 105
     Height = 41
     Caption = 'EDIT'
@@ -147,8 +147,8 @@ object FormUser: TFormUser
     OnClick = beditClick
   end
   object bhapus: TButton
-    Left = 408
-    Top = 160
+    Left = 384
+    Top = 152
     Width = 105
     Height = 41
     Caption = 'HAPUS'
@@ -156,8 +156,8 @@ object FormUser: TFormUser
     OnClick = bhapusClick
   end
   object bbatal: TButton
-    Left = 536
-    Top = 160
+    Left = 504
+    Top = 152
     Width = 105
     Height = 41
     Caption = 'BATAL'
@@ -167,8 +167,8 @@ object FormUser: TFormUser
   object dbgrd1: TDBGrid
     Left = 24
     Top = 208
-    Width = 617
-    Height = 209
+    Width = 625
+    Height = 241
     DataSource = ds1
     TabOrder = 7
     TitleFont.Charset = DEFAULT_CHARSET
@@ -178,71 +178,55 @@ object FormUser: TFormUser
     TitleFont.Style = []
     OnCellClick = dbgrd1CellClick
   end
-  object dtp1: TDateTimePicker
-    Left = 488
+  object dtptgl: TDateTimePicker
+    Left = 472
     Top = 16
     Width = 186
     Height = 21
-    Date = 45098.923362662030000000
-    Time = 45098.923362662030000000
+    Date = 45098.936920925920000000
+    Time = 45098.936920925920000000
     TabOrder = 8
   end
-  object dtp2: TDateTimePicker
-    Left = 488
-    Top = 48
-    Width = 186
-    Height = 21
-    Date = 45098.923362662030000000
-    Time = 45098.923362662030000000
-    TabOrder = 9
-  end
-  object cbblevel: TComboBox
-    Left = 160
-    Top = 80
-    Width = 153
-    Height = 21
-    ItemHeight = 13
-    TabOrder = 10
-    Text = '---- Pilih ---'
-    Items.Strings = (
-      'User'
-      'Admin')
-  end
-  object cbbstatus: TComboBox
-    Left = 160
-    Top = 112
-    Width = 153
-    Height = 21
-    ItemHeight = 13
-    TabOrder = 11
-    Text = '--- Pilih ---'
-    Items.Strings = (
-      'Guru'
-      'Siswa'
-      'Ortu')
-  end
   object b1: TButton
-    Left = 664
-    Top = 168
+    Left = 616
+    Top = 160
     Width = 75
     Height = 25
     Caption = 'PRINT'
-    TabOrder = 12
+    TabOrder = 9
     OnClick = b1Click
   end
-  object ZQuery1: TZQuery
-    Connection = ZConnection1
-    Active = True
-    SQL.Strings = (
-      'select*from user')
-    Params = <>
-    Left = 704
-    Top = 88
+  object cbbsiswaid: TComboBox
+    Left = 120
+    Top = 16
+    Width = 185
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 10
   end
-  object ds1: TDataSource
-    DataSet = ZQuery1
-    Left = 616
+  object cbbpoinid: TComboBox
+    Left = 120
+    Top = 48
+    Width = 185
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 11
+  end
+  object cbbwaliid: TComboBox
+    Left = 120
     Top = 80
+    Width = 185
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 12
+  end
+  object cbbortuid: TComboBox
+    Left = 120
+    Top = 112
+    Width = 185
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 13
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -255,8 +239,22 @@ object FormUser: TFormUser
     User = 'root'
     Protocol = 'mysql'
     LibraryLocation = 'C:\Users\Fety Fatimah\OneDrive\Desktop\LaporanSiswa\libmysql.dll'
-    Left = 704
-    Top = 40
+    Left = 672
+    Top = 16
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from semester')
+    Params = <>
+    Left = 672
+    Top = 72
+  end
+  object ds1: TDataSource
+    DataSet = ZQuery1
+    Left = 672
+    Top = 128
   end
   object frxReport1: TfrxReport
     Version = '4.12.6'
@@ -266,15 +264,15 @@ object FormUser: TFormUser
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 45101.895072129600000000
-    ReportOptions.LastChange = 45101.913767627300000000
+    ReportOptions.CreateDate = 45103.942857881900000000
+    ReportOptions.LastChange = 45103.947872650500000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
-    Left = 704
-    Top = 208
+    Left = 680
+    Top = 192
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -287,22 +285,21 @@ object FormUser: TFormUser
       Width = 1000.000000000000000000
     end
     object Page1: TfrxReportPage
-      Orientation = poLandscape
-      PaperWidth = 279.400000000000000000
-      PaperHeight = 215.900000000000000000
+      PaperWidth = 215.900000000000000000
+      PaperHeight = 279.400000000000000000
       PaperSize = 1
       LeftMargin = 10.000000000000000000
       RightMargin = 10.000000000000000000
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
       object ReportTitle1: TfrxReportTitle
-        Height = 37.795300000000000000
+        Height = 41.574830000000000000
         Top = 18.897650000000000000
-        Width = 980.410082000000000000
-        object Memo19: TfrxMemoView
-          Left = 249.448980000000000000
+        Width = 740.409927000000000000
+        object Memo1: TfrxMemoView
+          Left = 211.653680000000000000
           Top = 7.559060000000000000
-          Width = 449.764070000000000000
+          Width = 275.905690000000000000
           Height = 18.897650000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
@@ -310,22 +307,22 @@ object FormUser: TFormUser
           Font.Height = -20
           Font.Name = 'Arial'
           Font.Style = [fsBold]
-          Frame.Width = 2.000000000000000000
           HAlign = haCenter
           Memo.UTF8 = (
-            'LAPORAN PENGGUNA (USER DAN ADMIN)')
+            'LAPORAN DATA SEMESTER')
           ParentFont = False
           VAlign = vaCenter
         end
       end
       object PageHeader1: TfrxPageHeader
-        Height = 30.236240000000000000
-        Top = 79.370130000000000000
-        Width = 980.410082000000000000
-        object Memo1: TfrxMemoView
-          Left = 3.779530000000000000
-          Width = 37.795300000000000000
-          Height = 30.236240000000000000
+        Height = 45.354360000000000000
+        Top = 83.149660000000000000
+        Width = 740.409927000000000000
+        object Memo2: TfrxMemoView
+          Left = 56.692950000000000000
+          Top = 7.559060000000000000
+          Width = 45.354360000000000000
+          Height = 37.795275590000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -333,35 +330,18 @@ object FormUser: TFormUser
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
+          Frame.Width = 1.500000000000000000
           HAlign = haCenter
           Memo.UTF8 = (
             'NO')
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo2: TfrxMemoView
-          Left = 41.574830000000000000
-          Width = 109.606370000000000000
-          Height = 30.236240000000000000
-          ShowHint = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'USERNAME')
-          ParentFont = False
-          VAlign = vaCenter
-        end
         object Memo3: TfrxMemoView
-          Left = 151.181200000000000000
-          Width = 109.606370000000000000
-          Height = 30.236240000000000000
+          Left = 102.047310000000000000
+          Top = 7.559060000000000000
+          Width = 68.031540000000000000
+          Height = 37.795275590000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -369,17 +349,18 @@ object FormUser: TFormUser
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
+          Frame.Width = 1.500000000000000000
           HAlign = haCenter
           Memo.UTF8 = (
-            'PASSWORD')
+            'ID SISWA')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo4: TfrxMemoView
-          Left = 260.787570000000000000
-          Width = 83.149660000000000000
-          Height = 30.236240000000000000
+          Left = 170.078850000000000000
+          Top = 7.559060000000000000
+          Width = 68.031540000000000000
+          Height = 37.795275590000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -387,17 +368,18 @@ object FormUser: TFormUser
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
+          Frame.Width = 1.500000000000000000
           HAlign = haCenter
           Memo.UTF8 = (
-            'LEVEL')
+            'ID POIN')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo5: TfrxMemoView
-          Left = 343.937230000000000000
-          Width = 86.929190000000000000
-          Height = 30.236240000000000000
+          Left = 238.110390000000000000
+          Top = 7.559060000000000000
+          Width = 68.031540000000000000
+          Height = 37.795275590000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -405,107 +387,109 @@ object FormUser: TFormUser
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
+          Frame.Width = 1.500000000000000000
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'ID WALI')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo6: TfrxMemoView
+          Left = 306.141930000000000000
+          Top = 7.559060000000000000
+          Width = 68.031540000000000000
+          Height = 37.795275590000000000
+          ShowHint = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 1.500000000000000000
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'ID ORTU')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo7: TfrxMemoView
+          Left = 374.173470000000000000
+          Top = 7.559060000000000000
+          Width = 102.047310000000000000
+          Height = 37.795275590000000000
+          ShowHint = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 1.500000000000000000
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'TANGGAL')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo8: TfrxMemoView
+          Left = 476.220780000000000000
+          Top = 7.559060000000000000
+          Width = 102.047310000000000000
+          Height = 37.795275590000000000
+          ShowHint = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 1.500000000000000000
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'SEMESTER')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo9: TfrxMemoView
+          Left = 578.268090000000000000
+          Top = 7.559060000000000000
+          Width = 102.047310000000000000
+          Height = 37.795275590000000000
+          ShowHint = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 1.500000000000000000
           HAlign = haCenter
           Memo.UTF8 = (
             'STATUS')
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo6: TfrxMemoView
-          Left = 430.866420000000000000
-          Width = 132.283550000000000000
-          Height = 30.236240000000000000
-          ShowHint = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'CREATED AT')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo7: TfrxMemoView
-          Left = 563.149970000000000000
-          Width = 136.063080000000000000
-          Height = 30.236240000000000000
-          ShowHint = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'CREATED USER ID')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo8: TfrxMemoView
-          Left = 699.213050000000000000
-          Width = 139.842610000000000000
-          Height = 30.236240000000000000
-          ShowHint = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'UPDATED AT')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo9: TfrxMemoView
-          Left = 839.055660000000000000
-          Width = 136.063080000000000000
-          Height = 30.236240000000000000
-          ShowHint = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'UPDATED USER ID')
-          ParentFont = False
-          VAlign = vaCenter
-        end
       end
       object MasterData1: TfrxMasterData
-        Height = 30.236240000000000000
-        Top = 170.078850000000000000
-        Width = 980.410082000000000000
+        Height = 37.795300000000000000
+        Top = 188.976500000000000000
+        Width = 740.409927000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
         object Memo10: TfrxMemoView
-          Left = 3.779530000000000000
-          Width = 37.795300000000000000
-          Height = 30.236240000000000000
+          Left = 56.692950000000000000
+          Width = 45.354360000000000000
+          Height = 37.795275590000000000
           ShowHint = False
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
+          Frame.Width = 1.500000000000000000
           HAlign = haCenter
           Memo.UTF8 = (
             '[Line]')
@@ -513,11 +497,11 @@ object FormUser: TFormUser
           VAlign = vaCenter
         end
         object Memo11: TfrxMemoView
-          Left = 41.574830000000000000
-          Width = 109.606370000000000000
-          Height = 30.236240000000000000
+          Left = 102.047310000000000000
+          Width = 68.031540000000000000
+          Height = 37.795275590000000000
           ShowHint = False
-          DataField = 'username'
+          DataField = 'siswa_id'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
@@ -526,19 +510,19 @@ object FormUser: TFormUser
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
+          Frame.Width = 1.500000000000000000
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset1."username"]')
+            '[frxDBDataset1."siswa_id"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo12: TfrxMemoView
-          Left = 151.181200000000000000
-          Width = 109.606370000000000000
-          Height = 30.236240000000000000
+          Left = 170.078850000000000000
+          Width = 68.031540000000000000
+          Height = 37.795275590000000000
           ShowHint = False
-          DataField = 'password'
+          DataField = 'poin_id'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
@@ -547,19 +531,19 @@ object FormUser: TFormUser
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
+          Frame.Width = 1.500000000000000000
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset1."password"]')
+            '[frxDBDataset1."poin_id"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo13: TfrxMemoView
-          Left = 260.787570000000000000
-          Width = 83.149660000000000000
-          Height = 30.236240000000000000
+          Left = 238.110390000000000000
+          Width = 68.031540000000000000
+          Height = 37.795275590000000000
           ShowHint = False
-          DataField = 'level'
+          DataField = 'wali_id'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
@@ -568,17 +552,80 @@ object FormUser: TFormUser
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
+          Frame.Width = 1.500000000000000000
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset1."level"]')
+            '[frxDBDataset1."wali_id"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo14: TfrxMemoView
-          Left = 343.937230000000000000
-          Width = 86.929190000000000000
-          Height = 30.236240000000000000
+          Left = 306.141930000000000000
+          Width = 68.031540000000000000
+          Height = 37.795275590000000000
+          ShowHint = False
+          DataField = 'ortu_id'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 1.500000000000000000
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBDataset1."ortu_id"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo15: TfrxMemoView
+          Left = 374.173470000000000000
+          Width = 102.047310000000000000
+          Height = 37.795275590000000000
+          ShowHint = False
+          DataField = 'tanggal'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 1.500000000000000000
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBDataset1."tanggal"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo16: TfrxMemoView
+          Left = 476.220780000000000000
+          Width = 102.047310000000000000
+          Height = 37.795275590000000000
+          ShowHint = False
+          DataField = 'semester'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 1.500000000000000000
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBDataset1."semester"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo17: TfrxMemoView
+          Left = 578.268090000000000000
+          Width = 102.047310000000000000
+          Height = 37.795275590000000000
           ShowHint = False
           DataField = 'status'
           DataSet = frxDBDataset1
@@ -589,105 +636,21 @@ object FormUser: TFormUser
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
+          Frame.Width = 1.500000000000000000
           HAlign = haCenter
           Memo.UTF8 = (
             '[frxDBDataset1."status"]')
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo15: TfrxMemoView
-          Left = 430.866420000000000000
-          Width = 132.283550000000000000
-          Height = 30.236240000000000000
-          ShowHint = False
-          DataField = 'created_at'
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBDataset1."created_at"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo16: TfrxMemoView
-          Left = 563.149970000000000000
-          Width = 136.063080000000000000
-          Height = 30.236240000000000000
-          ShowHint = False
-          DataField = 'created_userid'
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBDataset1."created_userid"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo17: TfrxMemoView
-          Left = 699.213050000000000000
-          Width = 139.842610000000000000
-          Height = 30.236240000000000000
-          ShowHint = False
-          DataField = 'updated_at'
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBDataset1."updated_at"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo18: TfrxMemoView
-          Left = 839.055660000000000000
-          Width = 136.063080000000000000
-          Height = 30.236240000000000000
-          ShowHint = False
-          DataField = 'updated_userid'
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 2.000000000000000000
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBDataset1."updated_userid"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
       end
       object Footer1: TfrxFooter
-        Height = 45.354360000000000000
-        Top = 222.992270000000000000
-        Width = 980.410082000000000000
-        object Memo20: TfrxMemoView
-          Left = 759.685530000000000000
-          Top = 18.897650000000000000
+        Height = 49.133890000000000000
+        Top = 249.448980000000000000
+        Width = 740.409927000000000000
+        object Memo18: TfrxMemoView
+          Left = 510.236550000000000000
+          Top = 15.118120000000000000
           Width = 147.401670000000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -695,25 +658,33 @@ object FormUser: TFormUser
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
-          Font.Style = [fsBold]
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 1.500000000000000000
+          HAlign = haCenter
           Memo.UTF8 = (
-            'JUMLAH PENGGUNA :')
+            'Jumlah Laporan Data :')
           ParentFont = False
+          VAlign = vaCenter
         end
-        object Memo21: TfrxMemoView
-          Left = 918.425790000000000000
-          Top = 18.897650000000000000
-          Width = 94.488250000000000000
+        object Memo19: TfrxMemoView
+          Left = 657.638220000000000000
+          Top = 15.118120000000000000
+          Width = 37.795275590000000000
           Height = 18.897650000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
-          Font.Style = [fsBold]
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Frame.Width = 1.500000000000000000
+          HAlign = haCenter
           Memo.UTF8 = (
             '[COUNT(MasterData1)]')
           ParentFont = False
+          VAlign = vaCenter
         end
       end
     end
@@ -723,7 +694,7 @@ object FormUser: TFormUser
     CloseDataSource = False
     DataSet = ZQuery1
     BCDToCurrency = False
-    Left = 704
-    Top = 264
+    Left = 680
+    Top = 248
   end
 end
